@@ -1,25 +1,54 @@
-Rails3 + Twitter Bootstrap + Devise + CanCan
-============================================
+Mandarina Teach Rails Project
+===========================================================
 
-You can use this project as a starting point for a Rails web application. It requires Rails 3 and uses Devise for user management and authentication, CanCan for authorization of administrator access, and Twitter Bootstrap for CSS styling.
+Demo Application
+----------------
 
-Devise
-http://github.com/plataformatec/devise
+A demo application can be found at http://mandarina.herokuapp.com/
 
-CanCan
-https://github.com/ryanb/cancan
+Local Installation
+------------------
 
-Twitter Bootstrap
-http://twitter.github.com/bootstrap/
+1. Download and install railsinstaller (git is included)--> www.railsinstaller.org
 
-________________________
+2. Clone the repository
 
-For more information, please see the updated README file on GitHub:
+  `git clone https://github.com/manfergo25/mandarina.git`
 
-https://github.com/railsapps/rails3-bootstrap-devise-cancan
+3. Configure your database in config/database.yml The current config assumes a custom local SQLite configuration.
 
-________________________
+   `edit config/database.yml`
 
-MIT License
+4. Install gems
 
-http://www.opensource.org/licenses/mit-license
+  `bundle`
+
+5. Migrate database
+
+  `rake db:migrate`
+
+6. Start your webserver
+
+  `rails s`
+
+Using Heroku
+------------------
+
+In order to use heroku, you need to:
+
+  1. Download and install the heroku toolbelt for windows at https://toolbelt.heroku.com/
+
+  2. Log in using the email address and password you used when creating your Heroku account
+
+  3. Create an application
+
+	`heroku create`
+
+  4. Deploy the application
+ 	
+	`git push heroku master ( if you get Permission denied (publickey) --> heroku keys:add )`
+
+  5. Migrate database
+
+	`heroku run rake db:migrate`
+
