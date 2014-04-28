@@ -1,8 +1,13 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 gem 'rails', '3.2.14'
-gem 'sqlite3'
-gem 'pg'
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -31,4 +36,3 @@ group :test do
   gem 'email_spec'
   gem 'launchy'
 end
-gem 'rails_12factor', group: :production
